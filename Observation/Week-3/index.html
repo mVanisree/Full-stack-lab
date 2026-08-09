@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact List</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+    <h1>Contact List</h1>
+
+    <div class="info">
+
+        <input 
+            type="text" 
+            id="name" 
+            placeholder="Enter contact name"
+        >
+
+        <input 
+            type="text" 
+            id="phone" 
+            placeholder="Enter phone number"
+        >
+
+        <button onclick="addContact()">Add Contact</button>
+
+    </div>
+
+    <input 
+        type="search" 
+        placeholder="Search the contact" 
+        id="search"
+    >
+
+    <div id="contactList"></div>
+
+    <p id="totalContacts">Total Contacts: 0</p>
+
+    <script src="./script.js"></script>
+
+</body>
+</html>
