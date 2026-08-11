@@ -1,91 +1,104 @@
-const calculateBtn = document.getElementById("calculateBtn");
-calculateBtn.addEventListener("click", function(){
+let contacts = [];
 
-const studentName = document.getElementById("studentName").value;
-document.getElementById("student").textContent = `Name : ${studentName}`
-const english = Number(document.getElementById("eng").value);
-const maths = Number(document.getElementById("math").value);
-const science = Number(document.getElementById("sci").value);
-const social = Number(document.getElementById("soc").value);
-const sl = Number(document.getElementById("sl").value);
 
-const total = english + maths + science + social + sl;
-console.log(total);
+// Add Contact
+function addContact() {
 
-const totalElement = document.getElementById("total");
-totalElement.textContent = `Total : ${total}`;
+    let name = document.getElementById("name").value;
+    let phone = document.getElementById("phone").value;
 
-const average = total / 5;
-const avgElement = document.getElementById("average");
-avgElement.textContent = `Average: ${average}`;
+    if (name === "" || phone === "") {
+        alert("Please enter name and phone number");
+        return;
+    }
 
-let grade;
-if(average >= 90){
-    grade = "A";
-}
-else if(average >= 80){
-    grade = "B";
-}
-else if(average >= 70){
-    grade = "C";
-}
-else if(average >= 60){
-    grade = "D";
-}
-else{
-    grade = "Fail";
+    let contact = {
+        name: name,
+        phone: phone
+    };
+
+    contacts.push(contact);
+
+    document.getElementById("name").value = "";
+    document.getElementById("phone").value = "";
+
+    displayContacts();
 }
 
-document.getElementById("grade").textContent = `grade : ${grade}`;
 
-const gradeElement = document.getElementById("grade");
-if(grade == "A"){
-    gradeElement.style.color = "green";
-}
-else if(grade === "B"){
-     gradeElement.style.color = "blue";
-}
-else if(grade === "C"){
-     gradeElement.style.color = "yellow";
-}
-else if(grade === "D"){
-     gradeElement.style.color = "orange";
-}
-else{
-    gradeElement.style.color = "red";
+// Display Contacts
+function displayContacts() {
+
+    let contactList = document.getElementById("contactList");
+
+    contactList.innerHTML = "";
+
+    contacts.forEach(function(contact, index) {
+
+        contactList.innerHTML += `
+            <div class="info">
+
+                <h2>${contact.name}</h2>
+
+                <p>${contact.phone}</p>
+
+                <button onclick="deleteContact(${index})">
+                    Delete
+                </button>
+
+            </div>
+        `;
+    });
+
+    document.getElementById("totalContacts").innerText =
+        "Total Contacts: " + contacts.length;
 }
 
-let result;
 
-if (
-    english >= 35 &&
-    maths >= 35 &&
-    science >= 35 &&
-    social >= 35 &&
-    sl >= 35
-) {
-    result = "PASS";
+// Delete Contact
+function deleteContact(index) {
+
+    contacts.splice(index, 1);
+
+    displayContacts();
 }
-else {
-    result = "FAIL";
+
+
+// Search Contact
+function searchContact() {
+
+    let searchValue = document
+        .getElementById("search")
+        .value
+        .toLowerCase();
+
+    let contactList = document.getElementById("contactList");
+
+    contactList.innerHTML = "";
+
+    contacts.forEach(function(contact, index) {
+
+        if (contact.name.toLowerCase().includes(searchValue)) {
+
+            contactList.innerHTML += `
+                <div class="info">
+
+                    <h2>${contact.name}</h2>
+
+                    <p>${contact.phone}</p>
+
+                    <button onclick="deleteContact(${index})">
+                        Delete
+                    </button>
+
+                </div>
+            `;
+        }
+    });
 }
-document.getElementById("result").textContent = `Result : ${result}`;
-});
 
-const resetBtn = document.getElementById("resetBtn");
-resetBtn.addEventListener("click", function () {
-    document.getElementById("studentName").value = "";
-document.getElementById("eng").value = "";
-document.getElementById("math").value = "";
-document.getElementById("sci").value = "";
-document.getElementById("soc").value = "";
-document.getElementById("sl").value = "";
 
-document.getElementById("student").textContent = "Name :";
-document.getElementById("total").textContent = "Total :";
-document.getElementById("average").textContent = "Average :";
-document.getElementById("grade").textContent = "Grade :";
-document.getElementById("result").textContent = "Result :";
-
-document.getElementById("grade").style.color = "";
-});
+// Search while typing
+document
+    .getElementById("search")
+    .addEventListener("input", searchContact);

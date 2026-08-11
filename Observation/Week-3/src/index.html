@@ -3,43 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact List</title>
-    <link rel="stylesheet" href="./style.css">
+    <title>My Styled Webpage</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-    <h1>Contact List</h1>
+    <!-- Header -->
+    <header>
+        <h1>My Styled Webpage</h1>
+    </header>
 
-    <div class="info">
+    <!-- Navigation -->
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Courses</a>
+        <a href="#">Contact</a>
+    </nav>
 
-        <input 
-            type="text" 
-            id="name" 
-            placeholder="Enter contact name"
-        >
+    <!-- Content Cards -->
+    <section class="container">
 
-        <input 
-            type="text" 
-            id="phone" 
-            placeholder="Enter phone number"
-        >
+        <div class="card">
+            <h2>HTML5</h2>
+            <p>HTML5 provides semantic elements to structure web pages effectively.</p>
+            <button>Read More</button>
+        </div>
 
-        <button onclick="addContact()">Add Contact</button>
+        <div class="card">
+            <h2>CSS3</h2>
+            <p>CSS3 is used to style web pages with colors, layouts, animations, and effects.</p>
+            <button>Read More</button>
+        </div>
 
-    </div>
+        <div class="card">
+            <h2>JavaScript</h2>
+            <p>JavaScript makes web pages interactive by adding dynamic functionality.</p>
+            <button>Read More</button>
+        </div>
 
-    <input 
-        type="search" 
-        placeholder="Search the contact" 
-        id="search"
-    >
+    </section>
 
-    <div id="contactList"></div>
-
-    <p id="totalContacts">Total Contacts: 0</p>
-
-    <script src="./script.js"></script>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 My Styled Webpage. All Rights Reserved.</p>
+    </footer>
 
 </body>
 </html>

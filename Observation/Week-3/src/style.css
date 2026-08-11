@@ -1,121 +1,87 @@
-body {
-    background-color: white;
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 20px;
+/* Body */
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:linear-gradient(to right,#74ebd5,#ACB6E5);
 }
 
-
-/* Heading */
-h1 {
-    background-color: cadetblue;
-    color: aliceblue;
-    width: 250px;
-    margin: 20px auto;
-    padding: 10px;
-    text-align: center;
-    border-radius: 12px;
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.15);
+/* Header */
+header{
+    background-color:#2c3e50;
+    color:white;
+    text-align:center;
+    padding:20px;
+    text-shadow:2px 2px 5px black;
 }
 
-
-/* Add Contact Section */
-.info {
-    background-color: rgb(211, 96, 96);
-    margin: 20px auto;
-    padding: 20px;
-    border-radius: 12px;
-    width: 60%;
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+/* Navigation */
+nav{
+    background-color:#34495e;
+    padding:15px;
+    text-align:center;
 }
 
-
-/* Input boxes */
-input {
-    display: block;
-    width: 90%;
-    margin: 10px auto;
-    padding: 12px;
-    border: none;
-    border-radius: 8px;
-    box-sizing: border-box;
-    outline: none;
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:20px;
+    font-size:18px;
+    font-weight:bold;
 }
 
-
-/* Buttons */
-button {
-    border: none;
-    padding: 10px 20px;
-    background-color: cadetblue;
-    color: aliceblue;
-    border-radius: 8px;
-    display: block;
-    margin: 15px auto;
-    cursor: pointer;
+nav a:hover{
+    color:yellow;
 }
 
-button:hover {
-    background-color: rgb(61, 130, 132);
+/* Cards Container */
+.container{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+    margin:30px;
 }
 
-
-/* Search */
-#search {
-    display: block;
-    width: 50%;
-    margin: 20px auto;
-    padding: 12px;
-    border: none;
-    background-color: rgb(211, 96, 96);
-    color: white;
-    border-radius: 12px;
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.15);
-    outline: none;
+/* Individual Card */
+.card{
+    width:250px;
+    background:white;
+    border:2px solid gray;
+    border-radius:15px;
+    padding:20px;
+    margin:10px;
+    box-shadow:5px 5px 10px gray;
+    text-align:center;
 }
 
-
-#search::placeholder {
-    color: bisque;
+.card h2{
+    font-family:Georgia, serif;
+    font-size:24px;
 }
 
-
-/* Contact List */
-#contactList {
-    width: 60%;
-    margin: 20px auto;
+.card p{
+    font-size:16px;
 }
 
-
-/* Contact Cards */
-#contactList .info {
-    background-color: rgb(211, 96, 96);
-    color: bisque;
-    width: auto;
-    margin: 15px 0;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+/* Button */
+button{
+    background-color:blue;
+    color:white;
+    border:none;
+    padding:10px 20px;
+    border-radius:8px;
+    cursor:pointer;
 }
 
-
-/* Contact name */
-.info h2 {
-    margin-top: 0;
-    text-align: center;
+button:hover{
+    background-color:red;
 }
 
-
-/* Contact phone */
-.info p {
-    text-align: center;
-}
-
-
-/* Total contacts */
-#totalContacts {
-    text-align: center;
-    font-size: 18px;
-    font-weight: bold;
-    margin-top: 25px;
+/* Footer */
+footer{
+    background-color:#2c3e50;
+    color:white;
+    text-align:center;
+    padding:15px;
+    margin-top:30px;
 }

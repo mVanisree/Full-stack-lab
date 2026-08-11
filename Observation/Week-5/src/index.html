@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student grade calculator</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div>
+        <div class="heading">
+            <h1>Student Grade calculator</h1>
+        </div>
+
+        <div class="marks">
+    <label for="" class="name">Name</label>
+    <input type="text" placeholder="Enter the your name" class="ans" id="studentName">
+
+    <br><br>
+    <label for="" class="name">English</label>
+    <input type="number" placeholder="Enter the marks" class="ans" id="eng">
+
+     <br><br>
+    <label for="" class="name">Maths</label>
+    <input type="number" placeholder="Enter the marks" class="ans" id="math">
+
+     <br><br>
+    <label for="" class="name">Science</label>
+    <input type="number" placeholder="Enter the marks" class="ans" id="sci">
+
+     <br><br>
+    <label for="" class="name">Social</label>
+    <input type="number" placeholder="Enter the marks" class="ans" id="soc">
+
+     <br><br>
+    <label for="" class="name">SL</label>
+    <input type="number" placeholder="Enter the marks" class="ans" id="sl">
+
+     <br><br>
+
+    <button class="btn" id="calculateBtn">Calculate</button>  
+    <button type="reset" class="btn" id="resetBtn">Reset</button>
+
+    </div>
+
+   
+    <div class="results">
+        <h3>Results: </h3>
+        <p id="student">Name :</p>
+        <p id="total">Total : </p>
+        <p id="average">Average: </p>
+        <p id="grade">Grade: </p>
+        <p id="result">Result: </p>
+    </div>
+    </div>
+
+    <script src="./script.js"></script>
+
+</body>
+</html>
