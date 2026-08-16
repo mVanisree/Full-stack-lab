@@ -1,0 +1,66 @@
+body{
+    background-color: blueviolet;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.container{
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    font-size: 1.3rem;
+    box-shadow: 10px 20px 30px 10px rgba(0, 0, 0, 0.15);
+}
+#task{
+    border-radius: 4px;
+    border: none;
+    background-color: rgb(183, 133, 231);
+    height: 20px;
+    padding: 5px;
+}
+#task::placeholder{
+    color: white;
+}
+#addBtn{
+    margin-left: 100px;
+    cursor: pointer;
+    padding: 10px;
+    background-color: burlywood;
+    border: none;
+    border-radius: 4px;
+}
+#taskList{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: burlywood;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 10px 20px 30px 10px rgba(0, 0, 0, 0.15);
+
+}
+.task-item {
+    background-color: white;
+    padding: 12px 15px;
+    border-radius: 5px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+
+    min-width: 300px;
+}
+.task-item button {
+    padding: 6px 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    background-color: burlywood;
+}
+.completed{
+    text-decoration: line-through;
+    opacity: 0.6;
+}
