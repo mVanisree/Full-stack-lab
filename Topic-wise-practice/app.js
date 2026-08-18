@@ -1,41 +1,69 @@
+//GLOBAL OBJECT 
+global.appName = "MyNodeApp";
+global.version = 1;
 
+console.log("App Name: ", global.appName);
+console.log("Version:", global.version);
 
-//Arrow function 
-const add = (a,b) =>{
-    return a + b;
-};
-console.log(add(5,3));
-
-//Anonymous Function
-const greet = function(){
-    console.log("Hello");
-};
-greet();
-
-//CallBack Function
-function greeting(){
-    console.log("Hello from CallBack");
+function showAppInfo(){
+    console.log("Inside Function");
+    console.log("App Name: ", global.appName);
+    console.log("Version:", global.version);
+    global.greet = "Hello";
 }
-function process(callback){
-    console.log("Doing something");
-    callback();
-}
-process(greeting);
+showAppInfo();
+console.log(global.greet);
 
-//Promise
-const promise = new Promise((resolve, reject) =>{
-    let success = true;
-    if(success){
-        resolve("Task Completed");
+global.version = 2;
+
+console.log("updated version :", global.version);
+
+//CONSOLE OBJECT
+console.log("hello");
+console.warn("this is warning");
+console.error("This is error");
+
+//PROCESS
+console.log("Process ID: ", process.pid);
+console.log("Node Version:", process.version);
+console.log("Operating System:", process.platform);
+console.log("Current folder:", process.cwd());
+
+//BUFFER 
+const buf = Buffer.from("Hello");
+console.log("Buffer:", buf);
+console.log("The String is :", buf.toString());
+console.log("Length", buf.length);
+
+//__DIRNAME
+console.log("the folder path is :", __dirname);
+
+//__FILENAME
+console.log("The File Path is :", __filename);
+
+//SET TIME OUT
+console.log("Start");
+setTimeout( () => {
+    console.log("This runs after 2 seconds");
+}, 2000);
+console.log("end");
+
+//SET INTERVAL
+let count = 0;
+const intervalidId = setInterval ( () => {
+    count++;
+    console.log("Count :", count);
+
+    if(count == 5){
+        clearInterval(intervalidId);
+        console.log("Interval Stopped");
     }
-    else{
-        reject("Task failed");
-    }
-});
-promise
-.then((result) =>{
-    console.log(result);
-})
-.catch((error) => {
-    console.log(error);
-});
+}, 3000);
+
+//CLEAR TIME OUT
+console.log("started");
+const timerId = setTimeout( () => {
+    console.log("This message should appear");
+}, 5000);
+clearTimeout(timerId);
+console.log("Finished");
