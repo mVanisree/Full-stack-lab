@@ -1,44 +1,49 @@
-const task = document.getElementById("task");
-const addBtn = document.getElementById("addBtn");
-const taskList = document.getElementById("taskList");
-const emptyMessage = document.getElementById("emptyMessage");
-
-addBtn.addEventListener("click", function(){
-    const taskValue = task.value.trim()
-
-    if(taskValue === ""){
-        alert("Please Enter the task")
+class Student{
+    constructor(name, rollnumber, department, cgpa){
+        this.name = name;
+        this.rollnumber = rollnumber;
+        this.dept = department;
+        this.cgpa = cgpa;
     }
-    else{
-        const taskItem = document.createElement("div")
-        taskItem.textContent = taskValue;
-        taskItem.classList.add("task-item");
+}
 
-        const completeBtn = document.createElement("button");
-        completeBtn.textContent = "Complete";
-        
-        const deleteBtn = document.createElement("button");
-        deleteBtn.textContent = "Delete";
-        
-       completeBtn.addEventListener("click", function(){
-        taskItem.classList.toggle("completed");
-       });
+const createBtn = document.getElementById("createbtn");
 
-       deleteBtn.addEventListener("click", function(){
-        taskItem.remove();
+createBtn.addEventListener("click", function(){
+    const name = document.getElementById("name").value;
+    const rollnumber = document.getElementById("number").value;
+    const department = document.getElementById("dept").value;
+    const cgpa = document.getElementById("cgpa").value;
 
-        if(taskList.children.length === 1){
-            emptyMessage.style.display = "block";
-        }
-       });
+    const student = new Student(
+        name,
+        rollnumber,
+        department,
+        cgpa
+    );
 
-       taskItem.appendChild(completeBtn);
-       taskItem.appendChild(deleteBtn)
+    const profile =document.getElementById("display-profile");
 
-       taskList.appendChild(taskItem);
+    profile.innerHTML = "";
 
-       emptyMessage.style.display = "none";
+    const heading = document.createElement("h2");
+    heading.textContent = "Student Profile";
 
-       task.value = "";
-    }
-});
+    const namePara = document.createElement("p");
+    namePara.textContent = "Name: " + student.name;
+
+    const rollPara = document.createElement("p");
+    rollPara.textContent = "Roll Number: " + student.rollnumber;
+
+    const deptPara = document.createElement("p");
+    deptPara.textContent = "Department: " + student.dept;
+
+    const cgpaPara = document.createElement("p");
+    cgpaPara.textContent = "CGPA: " + student.cgpa;
+
+    profile.appendChild(heading);
+    profile.appendChild(namePara);
+    profile.appendChild(rollPara);
+    profile.appendChild(deptPara);
+    profile.appendChild(cgpaPara);
+})

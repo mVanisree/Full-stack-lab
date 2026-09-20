@@ -1,66 +1,49 @@
 body{
-    background-color: blueviolet;
+    background-color: beige;
     display: flex;
     flex-direction: column;
+    margin: 0;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    min-height: 100vh;
 }
 .container{
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    font-size: 1.3rem;
-    box-shadow: 10px 20px 30px 10px rgba(0, 0, 0, 0.15);
-}
-#task{
-    border-radius: 4px;
-    border: none;
-    background-color: rgb(183, 133, 231);
-    height: 20px;
-    padding: 5px;
-}
-#task::placeholder{
-    color: white;
-}
-#addBtn{
-    margin-left: 100px;
-    cursor: pointer;
-    padding: 10px;
-    background-color: burlywood;
-    border: none;
-    border-radius: 4px;
-}
-#taskList{
+    background-color: aqua;
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    background-color: burlywood;
-    padding: 10px;
-    border-radius: 10px;
-    box-shadow: 10px 20px 30px 10px rgba(0, 0, 0, 0.15);
-
+    width: 550px;
+    padding: 20px;
+    box-shadow: 10px 20px 30px 40px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
 }
-.task-item {
-    background-color: white;
-    padding: 12px 15px;
-    border-radius: 5px;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 10px;
-
-    min-width: 300px;
-}
-.task-item button {
-    padding: 6px 10px;
-    cursor: pointer;
+#name , #number, #dept, #cgpa{
+    width: 500px;
+    border-radius: 6px;
     border: none;
-    border-radius: 4px;
-    background-color: burlywood;
+    background-color: azure; 
 }
-.completed{
-    text-decoration: line-through;
-    opacity: 0.6;
+button{
+    width: 300px;
+    margin-left: 200px;
+    border-radius: 5px;
+    border: none;
+    padding: 10px;
+    width: 200px;
+    color: blue;
+}
+button:hover {
+    background-color: darkblue;
+}
+
+#display-profile {
+    background-color: white;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    text-align: left;
+    box-shadow: 0px 2px 8px gray;
+}
+
+#display-profile h2 {
+    text-align: center;
 }

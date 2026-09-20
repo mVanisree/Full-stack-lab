@@ -7,18 +7,28 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <h1>My To-Do List</h1>
+    <h1>Student details</h1>
     <div class="container">
-        <label for="task">Enter the Task:</label>
-        <input type="text" name="" id="task" placeholder="Please enter your task">
+        <label for="name">Name: </label>
+        <input type="text" placeholder="Enter your Name: " id="name">
+
+        <br><br>
+        <label for="number">Roll Number: </label>
+        <input type="text" placeholder="Enter your Roll Number: " id="number">
+
+        <br><br>
+        <label for="dept">Department: </label>
+        <input type="text" placeholder="Enter your Department Name: " id="dept">
+
+        <br><br>
+        <label for="cgpa">CGPA: </label>
+        <input type="text" placeholder="Enter your CGPA: " id="cgpa">
 
         <br><br>
 
-        <button id="addBtn">Add Task</button>
+        <button type="submit" id="createbtn">Create Profile</button>
 
-    </div><br><br>
-    <div id="taskList">
-        <p id="emptyMessage">No tasks available</p>
+        <div id="display-profile"></div>
     </div>
     <script src="./script.js"></script>
 </body>
