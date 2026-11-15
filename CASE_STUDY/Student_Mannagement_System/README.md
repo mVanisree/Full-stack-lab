@@ -48,17 +48,5 @@ Student-Management-System/
 | GET | /api/reports/year-summary | Count per year |
 | GET | /api/reports/total-students | Total students + overall average attendance (extra) |
 
-## Deployment
 See `PROJECT_SETUP.md` (Atlas → Render → Vercel). URLs: Frontend `<YOUR-VERCEL-URL>`, Backend `<YOUR-RENDER-URL>` (placeholders until you deploy).
 
-## Screenshots
-Add your own images from `screenshots/`.
-
-## Common errors
-| Error | Fix |
-|---|---|
-| `Database connection failed` / `bad auth` | Check username/password in `MONGODB_URI`; URL-encode special characters in the password |
-| `ECONNREFUSED`/timeout to Atlas | Add your IP in Atlas Network Access |
-| CORS error in browser | Set `FRONTEND_ORIGIN` in backend env to the exact frontend URL (no trailing slash) |
-| Frontend shows "Failed to fetch" | Backend not running, or wrong `VITE_API_URL` (restart `npm run dev` after editing .env) |
-| 409 Roll number already exists | rollNo must be unique |
